@@ -36,8 +36,8 @@ function textAtAudioOffset(seconds) {
     const offsets = Object.keys(data).sort();   // TODO: no need to do this every tick
 
     for (let i = 0; i < offsets.length; i++) {
-        if (offsets[i] >= seconds) {
-            return data[offsets[i - 1]];
+        if (offsets[i] > seconds) {
+            return data[offsets[(i == 0 ? 1 : i) - 1]];
         }
     }
 }
