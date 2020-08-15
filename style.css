@@ -5,6 +5,7 @@
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    -webkit-appearance: none;
 }
 
 div {
