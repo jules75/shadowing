@@ -32,8 +32,7 @@
     </audio>
 
     <button id="rewind">-10s</button>
-    <button id="play">Play</button>
-    <button id="pause">Pause</button>
+    <button id="play_pause">Play/Pause</button>
     <button id="forward">+10s</button>
 
 </body>
@@ -63,8 +62,13 @@
         mp3.currentTime -= 10;
     }
 
-    function onPlayClick(e) {
-        mp3.play();
+    function onPlayPauseClick(e) {
+        if (mp3.paused) {
+            mp3.play();
+        }
+        else {
+            mp3.pause();
+        }
     }
 
     function onPauseClick(e) {
@@ -83,8 +87,7 @@
     document.getElementById('faster').addEventListener('click', onFasterClick);
 
     document.getElementById('rewind').addEventListener('click', onRewindClick);
-    document.getElementById('play').addEventListener('click', onPlayClick);
-    document.getElementById('pause').addEventListener('click', onPauseClick);
+    document.getElementById('play_pause').addEventListener('click', onPlayPauseClick);
     document.getElementById('forward').addEventListener('click', onForwardClick);
 
 </script>
