@@ -34,14 +34,14 @@ audio {
     display: none;
 }
 
-p#attribution {
+p#meta {
     background-color: grey;
     color: whitesmoke;
     padding: 3px;
     text-align: center;
 }
 
-p#attribution a {
+p#meta a {
     color: whitesmoke
 }
 

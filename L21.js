@@ -18,3 +18,5 @@ const data = {
 const src = "audio/L21_walk_in_the_park.mp3";
 
 const attribution = 'Audio content &copy; <a href="https://mandarinblueprint.com">Mandarin Blueprint</a>';
+
+const title = "Level 21 - Walk in the park"
