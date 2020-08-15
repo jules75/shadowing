@@ -1,5 +1,6 @@
 let mp3;
 let current_speed, current_offset;
+let overlay;
 
 function onSlowerClick(e) {
     mp3.playbackRate -= 0.1;
@@ -18,11 +19,14 @@ function onForwardClick(e) {
 }
 
 function onPlayPauseClick(e) {
+
     if (mp3.paused) {
         mp3.play();
+        overlay.src = 'icon/pause.svg';
     }
     else {
         mp3.pause();
+        overlay.src = 'icon/play.svg';
     }
 }
 
@@ -51,6 +55,8 @@ function init() {
 
     current_speed = document.getElementById('current_speed');
     current_offset = document.getElementById('current_offset');
+
+    overlay = document.getElementById('overlay');
 
     document.getElementById('slower').addEventListener('click', onSlowerClick);
     document.getElementById('faster').addEventListener('click', onFasterClick);
