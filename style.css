@@ -56,6 +56,10 @@ button {
     border: 1px solid black;
 }
 
+button:active {
+    background-color: lightblue;
+}
+
 button#play_pause {
     flex-grow: 3;
 }
