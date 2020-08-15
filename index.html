@@ -8,6 +8,11 @@
 
 <body>
 
+    <button id="slower">Slower</button>
+    <button id="normal">Normal</button>
+    <button id="faster">Faster</button>
+    <p id="speed">1</p>
+
     <pre>
     A: 小元，今天天气很好，我们一起去公园玩儿吧！
     B: 公园？哪儿有公园?
@@ -26,41 +31,61 @@
         <source src="L21_walk_in_the_park.mp3" type="audio/mpeg">
     </audio>
 
-    <button id="slower">Slower</button>
-    <button id="normal">Normal</button>
-    <button id="faster">Faster</button>
-    <p id="speed">1</p>
+    <button id="rewind">-10s</button>
+    <button id="play">Play</button>
+    <button id="pause">Pause</button>
+    <button id="forward">+10s</button>
 
 </body>
 
 <script>
 
+    function updateUI() {
+        speed.innerText = mp3.playbackRate;
+    }
+
     function onSlowerClick(e) {
         mp3.playbackRate -= 0.1;
-        speed.innerText = mp3.playbackRate;
+        updateUI();
     }
 
     function onNormalClick(e) {
         mp3.playbackRate = 1;
-        speed.innerText = mp3.playbackRate;
+        updateUI();
     }
 
     function onFasterClick(e) {
         mp3.playbackRate += 0.1;
-        speed.innerText = mp3.playbackRate;
+        updateUI();
+    }
+
+    function onRewindClick(e) {
+        mp3.currentTime -= 10;
+    }
+
+    function onPlayClick(e) {
+        mp3.play();
+    }
+
+    function onPauseClick(e) {
+        mp3.pause();
+    }
+
+    function onForwardClick(e) {
+        mp3.currentTime += 10;
     }
 
     const mp3 = document.getElementById('mp3');
-
-    const slower = document.getElementById('slower');
-    const normal = document.getElementById('normal');
-    const faster = document.getElementById('faster');
-
     const speed = document.getElementById('speed');
 
-    slower.addEventListener('click', onSlowerClick);
-    normal.addEventListener('click', onNormalClick);
-    faster.addEventListener('click', onFasterClick);
+    document.getElementById('slower').addEventListener('click', onSlowerClick);
+    document.getElementById('normal').addEventListener('click', onNormalClick);
+    document.getElementById('faster').addEventListener('click', onFasterClick);
+
+    document.getElementById('rewind').addEventListener('click', onRewindClick);
+    document.getElementById('play').addEventListener('click', onPlayClick);
+    document.getElementById('pause').addEventListener('click', onPauseClick);
+    document.getElementById('forward').addEventListener('click', onForwardClick);
 
 </script>
 
