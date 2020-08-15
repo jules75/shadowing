@@ -32,11 +32,11 @@ function onPlayPauseClick(e) {
 
 function textAtAudioOffset(seconds) {
 
-    const offsets = Object.keys(data).sort();   // TODO: no need to do this every tick
+    const offsets = Object.keys(data.text).sort();   // TODO: no need to do this every tick
 
     for (let i = 0; i < offsets.length; i++) {
         if (offsets[i] > seconds) {
-            return data[offsets[(i == 0 ? 1 : i) - 1]];
+            return data.text[offsets[(i == 0 ? 1 : i) - 1]];
         }
     }
 }
@@ -51,7 +51,7 @@ function tick() {
 function init() {
 
     mp3 = document.getElementById('mp3');
-    mp3.src = src;  // loaded from JS file
+    mp3.src = data.src;  // loaded from JS file
 
     current_speed = document.getElementById('current_speed');
     current_offset = document.getElementById('current_offset');
@@ -66,7 +66,7 @@ function init() {
 
     document.getElementById('text').addEventListener('click', onPlayPauseClick);
 
-    document.getElementById('meta').innerHTML = title + '<br>' + attribution;
+    document.getElementById('meta').innerHTML = data.title + '<br>' + data.attribution;
 
     setInterval(tick, 150);
 }
