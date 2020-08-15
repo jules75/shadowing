@@ -12,7 +12,11 @@ function onFasterClick(e) {
 }
 
 function onRewindClick(e) {
-    mp3.currentTime -= 10;
+    mp3.currentTime -= 3;
+}
+
+function onForwardClick(e) {
+    mp3.currentTime += 3;
 }
 
 function onPlayPauseClick(e) {
@@ -26,10 +30,6 @@ function onPlayPauseClick(e) {
         play_icon.style.display = 'inline-block';
         pause_icon.style.display = 'none';
     }
-}
-
-function onForwardClick(e) {
-    mp3.currentTime += 10;
 }
 
 function textAtAudioOffset(seconds) {
