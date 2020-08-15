@@ -1,6 +1,7 @@
 let mp3;
 let current_speed, current_offset;
 let paragraphs;
+let play_icon, pause_icon;
 
 function onSlowerClick(e) {
     mp3.playbackRate -= 0.1;
@@ -17,14 +18,14 @@ function onRewindClick(e) {
 function onPlayPauseClick(e) {
     if (mp3.paused) {
         mp3.play();
+        play_icon.style.display = 'none';
+        pause_icon.style.display = 'inline-block';
     }
     else {
         mp3.pause();
+        play_icon.style.display = 'inline-block';
+        pause_icon.style.display = 'none';
     }
-}
-
-function onPauseClick(e) {
-    mp3.pause();
 }
 
 function onForwardClick(e) {
@@ -52,6 +53,9 @@ function init() {
     current_speed = document.getElementById('current_speed');
     current_offset = document.getElementById('current_offset');
     paragraphs = document.querySelectorAll('p[data-offset]');
+
+    play_icon = document.querySelectorAll('img[alt="Play"]')[0];
+    pause_icon = document.querySelectorAll('img[alt="Pause"]')[0];
 
     document.getElementById('slower').addEventListener('click', onSlowerClick);
     document.getElementById('faster').addEventListener('click', onFasterClick);
