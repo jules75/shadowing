@@ -42,8 +42,8 @@ function textAtAudioOffset(seconds) {
 function tick() {
     const p = textAtAudioOffset(mp3.currentTime);
     document.getElementById('current_paragraph').innerText = p.innerText;
-    current_speed.innerText = mp3.playbackRate;
-    current_offset.innerText = mp3.currentTime;
+    current_speed.innerText = mp3.playbackRate.toFixed(1);
+    current_offset.innerText = mp3.currentTime.toFixed(1);
 }
 
 function init() {
@@ -60,5 +60,5 @@ function init() {
     document.getElementById('play_pause').addEventListener('click', onPlayPauseClick);
     document.getElementById('forward').addEventListener('click', onForwardClick);
 
-    setInterval(tick, 250);
+    setInterval(tick, 150);
 }
