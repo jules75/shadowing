@@ -1,9 +1,9 @@
 let mp3;
-let current_speed;
+// let current_speed;
 let paragraphs;
 
 function updateUI() {
-    current_speed.innerText = mp3.playbackRate;
+    // current_speed.innerText = mp3.playbackRate;
 }
 
 function onSlowerClick(e) {
@@ -51,13 +51,14 @@ function textAtAudioOffset(seconds) {
 }
 
 function tick() {
-    console.log(textAtAudioOffset(mp3.currentTime));
+    const p = textAtAudioOffset(mp3.currentTime);
+    document.getElementById('current_paragraph').innerText = p.innerText;
 }
 
 function init() {
 
     mp3 = document.getElementById('mp3');
-    current_speed = document.getElementById('current_speed');
+    // current_speed = document.getElementById('current_speed');
     paragraphs = document.querySelectorAll('p[data-offset]');
 
     document.getElementById('slower').addEventListener('click', onSlowerClick);

@@ -3,7 +3,13 @@ audio {
 }
 
 p {
-    font-size: 20pt;
+    font-size: 30pt;
+    line-height: 2;
+    letter-spacing: 5px;
+}
+
+p[data-offset] {
+    display: none;
 }
 
 section {
