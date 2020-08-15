@@ -34,6 +34,17 @@ audio {
     display: none;
 }
 
+p#attribution {
+    background-color: grey;
+    color: whitesmoke;
+    padding: 3px;
+    text-align: center;
+}
+
+p#attribution a {
+    color: whitesmoke
+}
+
 p#text {
     font-size: 30pt;
     line-height: 1.6;

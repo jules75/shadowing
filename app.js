@@ -66,5 +66,7 @@ function init() {
 
     document.getElementById('text').addEventListener('click', onPlayPauseClick);
 
+    document.getElementById('attribution').innerHTML = attribution;
+
     setInterval(tick, 150);
 }
