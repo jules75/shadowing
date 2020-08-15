@@ -56,6 +56,7 @@ function init() {
 
     play_icon = document.querySelectorAll('img[alt="Play"]')[0];
     pause_icon = document.querySelectorAll('img[alt="Pause"]')[0];
+    pause_icon.style.display = 'none';
 
     document.getElementById('slower').addEventListener('click', onSlowerClick);
     document.getElementById('faster').addEventListener('click', onFasterClick);
