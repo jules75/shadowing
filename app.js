@@ -40,9 +40,21 @@ function textAtAudioOffset(seconds) {
     }
 }
 
+function textAtAudioOffset2(seconds) {
+
+    const offsets = Object.keys(data).sort();   // TODO: no need to do this every tick
+
+    for (let i = 0; i < offsets.length; i++) {
+        if (offsets[i] >= seconds) {
+            return data[offsets[i - 1]];
+        }
+    }
+}
+
 function tick() {
-    const p = textAtAudioOffset(mp3.currentTime);
-    document.getElementById('current_paragraph').innerText = p.innerText;
+    // const p = textAtAudioOffset(mp3.currentTime);
+    const q = textAtAudioOffset2(mp3.currentTime);
+    document.getElementById('current_paragraph').innerText = q;   // TODO: no need to do this every tick
     current_speed.innerText = mp3.playbackRate.toFixed(1);
     current_offset.innerText = mp3.currentTime.toFixed(1);
 }
