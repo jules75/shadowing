@@ -1,6 +1,5 @@
 let mp3;
 let current_speed, current_offset;
-let paragraphs;
 let play_icon, pause_icon;
 
 function onSlowerClick(e) {
@@ -33,14 +32,6 @@ function onPlayPauseClick(e) {
 }
 
 function textAtAudioOffset(seconds) {
-    for (let i = 0; i < paragraphs.length; i++) {
-        if (paragraphs[i].dataset.offset > seconds) {
-            return paragraphs[i - 1];
-        }
-    }
-}
-
-function textAtAudioOffset2(seconds) {
 
     const offsets = Object.keys(data).sort();   // TODO: no need to do this every tick
 
@@ -52,8 +43,7 @@ function textAtAudioOffset2(seconds) {
 }
 
 function tick() {
-    // const p = textAtAudioOffset(mp3.currentTime);
-    const q = textAtAudioOffset2(mp3.currentTime);
+    const q = textAtAudioOffset(mp3.currentTime);
     document.getElementById('current_paragraph').innerText = q;   // TODO: no need to do this every tick
     current_speed.innerText = mp3.playbackRate.toFixed(1);
     current_offset.innerText = mp3.currentTime.toFixed(1);
@@ -64,7 +54,6 @@ function init() {
     mp3 = document.getElementById('mp3');
     current_speed = document.getElementById('current_speed');
     current_offset = document.getElementById('current_offset');
-    paragraphs = document.querySelectorAll('p[data-offset]');
 
     play_icon = document.querySelectorAll('img[alt="Play"]')[0];
     pause_icon = document.querySelectorAll('img[alt="Pause"]')[0];

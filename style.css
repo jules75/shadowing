@@ -34,10 +34,6 @@ div#text p {
     letter-spacing: 5px;
 }
 
-p[data-offset] {
-    display: none;
-}
-
 p#status {
     text-align: center;
     color: #888;
