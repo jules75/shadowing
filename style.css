@@ -4,8 +4,15 @@
     -webkit-appearance: none;
 }
 
+html {
+    background-color: #ddd;
+}
+
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white;
 }
 
 html,
