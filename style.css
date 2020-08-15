@@ -2,9 +2,8 @@ audio {
     display: none;
 }
 
-pre {
+p {
     font-size: 20pt;
-    white-space: pre-wrap;
 }
 
 section {

@@ -1,5 +1,6 @@
-let mp3 = document.getElementById('mp3');
-let current_speed = document.getElementById('current_speed');
+let mp3;
+let current_speed;
+let paragraphs;
 
 function updateUI() {
     current_speed.innerText = mp3.playbackRate;
@@ -41,10 +42,23 @@ function onForwardClick(e) {
     mp3.currentTime += 10;
 }
 
+function textAtAudioOffset(seconds) {
+    for (let i = 0; i < paragraphs.length; i++) {
+        if (paragraphs[i].dataset.offset > seconds) {
+            return paragraphs[i - 1];
+        }
+    }
+}
+
+function tick() {
+    console.log(textAtAudioOffset(mp3.currentTime));
+}
+
 function init() {
 
     mp3 = document.getElementById('mp3');
     current_speed = document.getElementById('current_speed');
+    paragraphs = document.querySelectorAll('p[data-offset]');
 
     document.getElementById('slower').addEventListener('click', onSlowerClick);
     document.getElementById('normal').addEventListener('click', onNormalClick);
@@ -53,4 +67,6 @@ function init() {
     document.getElementById('rewind').addEventListener('click', onRewindClick);
     document.getElementById('play_pause').addEventListener('click', onPlayPauseClick);
     document.getElementById('forward').addEventListener('click', onForwardClick);
+
+    setInterval(tick, 250);
 }
