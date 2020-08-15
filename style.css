@@ -52,4 +52,6 @@ section {
 button {
     flex-grow: 1;
     padding: 1em 0;
+    background-color: cornflowerblue;
+    border: 1px solid black;
 }
