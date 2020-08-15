@@ -14,3 +14,5 @@ const data = {
     '40.2': "你写完了的活，也可以过来和我一起玩儿。",
     '999': ""
 };
+
+const src = "audio/L21_walk_in_the_park.mp3";

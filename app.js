@@ -52,6 +52,8 @@ function tick() {
 function init() {
 
     mp3 = document.getElementById('mp3');
+    mp3.src = src;  // loaded from JS file
+
     current_speed = document.getElementById('current_speed');
     current_offset = document.getElementById('current_offset');
 
