@@ -1,19 +1,13 @@
 let mp3;
-let current_speed;
+let current_speed, current_offset;
 let paragraphs;
-
-function updateUI() {
-    current_speed.innerText = mp3.playbackRate;
-}
 
 function onSlowerClick(e) {
     mp3.playbackRate -= 0.1;
-    updateUI();
 }
 
 function onFasterClick(e) {
     mp3.playbackRate += 0.1;
-    updateUI();
 }
 
 function onRewindClick(e) {
@@ -48,12 +42,15 @@ function textAtAudioOffset(seconds) {
 function tick() {
     const p = textAtAudioOffset(mp3.currentTime);
     document.getElementById('current_paragraph').innerText = p.innerText;
+    current_speed.innerText = mp3.playbackRate;
+    current_offset.innerText = mp3.currentTime;
 }
 
 function init() {
 
     mp3 = document.getElementById('mp3');
     current_speed = document.getElementById('current_speed');
+    current_offset = document.getElementById('current_offset');
     paragraphs = document.querySelectorAll('p[data-offset]');
 
     document.getElementById('slower').addEventListener('click', onSlowerClick);
