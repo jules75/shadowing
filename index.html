@@ -9,10 +9,13 @@
 
 <body>
 
-    <button id="slower">Slower</button>
-    <button id="normal">Normal</button>
-    <button id="faster">Faster</button>
-    <p id="speed">1</p>
+    <section id="speed">
+        <button id="slower">Slower</button>
+        <button id="normal">Normal</button>
+        <button id="faster">Faster</button>
+    </section>
+
+    <p id="current_speed">1</p>
 
     <pre>
     A: 小元，今天天气很好，我们一起去公园玩儿吧！
@@ -32,16 +35,18 @@
         <source src="L21_walk_in_the_park.mp3" type="audio/mpeg">
     </audio>
 
-    <button id="rewind">-10s</button>
-    <button id="play_pause">Play/Pause</button>
-    <button id="forward">+10s</button>
+    <section id="controls">
+        <button id="rewind">-10s</button>
+        <button id="play_pause">Play/Pause</button>
+        <button id="forward">+10s</button>
+    </section>
 
 </body>
 
 <script>
 
     function updateUI() {
-        speed.innerText = mp3.playbackRate;
+        current_speed.innerText = mp3.playbackRate;
     }
 
     function onSlowerClick(e) {
@@ -81,7 +86,7 @@
     }
 
     const mp3 = document.getElementById('mp3');
-    const speed = document.getElementById('speed');
+    const current_speed = document.getElementById('current_speed');
 
     document.getElementById('slower').addEventListener('click', onSlowerClick);
     document.getElementById('normal').addEventListener('click', onNormalClick);

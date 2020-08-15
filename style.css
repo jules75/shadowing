@@ -1,4 +1,27 @@
+audio {
+    display: none;
+}
+
 pre {
     font-size: 20pt;
     white-space: pre-wrap;
+}
+
+section {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+}
+
+section#speed {
+    top: 0;
+}
+
+section#controls {
+    bottom: 0;
+}
+
+button {
+    flex-grow: 1;
 }
