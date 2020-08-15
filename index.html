@@ -11,25 +11,32 @@
 <body>
 
     <section id="speed">
-        <button id="slower">Slower</button>
-        <button id="normal">Normal</button>
-        <button id="faster">Faster</button>
+        <button id="slower"><img src="icon/chevrons-down.svg" alt="Slower"></button>
+        <button id="faster"><img src="icon/chevrons-up.svg" alt="Faster"></button>
     </section>
 
-    <p data-offset="0">A: 小元，今天天气很好，我们一起去公园玩儿吧！</p>
-    <p data-offset="5">B: 公园？哪儿有公园?</p>
-    <p data-offset="7">A: 就在那家中国很行得后面。</p>
-    <p data-offset="10">B: 太远了，我不去。</p>
-    <p data-offset="12">A: 不远不远，坐两元的公交车就到了。</p>
-    <p data-offset="16">B: 我还是不去了，因为今天学的汉字我还没写完。</p>
-    <p data-offset="21">A: 你不是早就写完了吗？</p>
-    <p data-offset="23">B: 写得不完美，我又写了一次。</p>
-    <p data-offset="27">A: 那如果你还是觉得不完美，你又要写一次吗？</p>
-    <p data-offset="32">B: 对！我一定要写得很完美。</p>
-    <p data-offset="35">A: 好吧！我觉得我说服不了你，那我自己去公园玩儿子。你写完了的活，也可以过来和我一起玩儿。</p>
-    <p data-offset="999"></p>
+    <div>
 
-    <p id="current_paragraph"></p>
+        <p data-offset="0">A: 小元，今天天气很好，我们一起去公园玩儿吧！</p>
+        <p data-offset="5">B: 公园？哪儿有公园?</p>
+        <p data-offset="7">A: 就在那家中国很行得后面。</p>
+        <p data-offset="10">B: 太远了，我不去。</p>
+        <p data-offset="12">A: 不远不远，坐两元的公交车就到了。</p>
+        <p data-offset="16">B: 我还是不去了，因为今天学的汉字我还没写完。</p>
+        <p data-offset="21">A: 你不是早就写完了吗？</p>
+        <p data-offset="23">B: 写得不完美，我又写了一次。</p>
+        <p data-offset="27">A: 那如果你还是觉得不完美，你又要写一次吗？</p>
+        <p data-offset="32">B: 对！我一定要写得很完美。</p>
+        <p data-offset="35">A: 好吧！我觉得我说服不了你，那我自己去公园玩儿子。你写完了的活，也可以过来和我一起玩儿。</p>
+        <p data-offset="999"></p>
+
+        <p id="current_paragraph"></p>
+
+    </div>
+
+    <div id="status">
+        <p id="current_speed"></p>
+    </div>
 
     <audio controls id="mp3">
         <source src="L21_walk_in_the_park.mp3" type="audio/mpeg">

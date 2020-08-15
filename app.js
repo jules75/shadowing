@@ -1,18 +1,13 @@
 let mp3;
-// let current_speed;
+let current_speed;
 let paragraphs;
 
 function updateUI() {
-    // current_speed.innerText = mp3.playbackRate;
+    current_speed.innerText = mp3.playbackRate;
 }
 
 function onSlowerClick(e) {
     mp3.playbackRate -= 0.1;
-    updateUI();
-}
-
-function onNormalClick(e) {
-    mp3.playbackRate = 1;
     updateUI();
 }
 
@@ -58,11 +53,10 @@ function tick() {
 function init() {
 
     mp3 = document.getElementById('mp3');
-    // current_speed = document.getElementById('current_speed');
+    current_speed = document.getElementById('current_speed');
     paragraphs = document.querySelectorAll('p[data-offset]');
 
     document.getElementById('slower').addEventListener('click', onSlowerClick);
-    document.getElementById('normal').addEventListener('click', onNormalClick);
     document.getElementById('faster').addEventListener('click', onFasterClick);
 
     document.getElementById('rewind').addEventListener('click', onRewindClick);
