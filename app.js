@@ -1,6 +1,5 @@
 let mp3;
 let current_speed, current_offset;
-let play_icon, pause_icon;
 
 function onSlowerClick(e) {
     mp3.playbackRate -= 0.1;
@@ -21,13 +20,9 @@ function onForwardClick(e) {
 function onPlayPauseClick(e) {
     if (mp3.paused) {
         mp3.play();
-        play_icon.style.display = 'none';
-        pause_icon.style.display = 'inline-block';
     }
     else {
         mp3.pause();
-        play_icon.style.display = 'inline-block';
-        pause_icon.style.display = 'none';
     }
 }
 
@@ -57,16 +52,13 @@ function init() {
     current_speed = document.getElementById('current_speed');
     current_offset = document.getElementById('current_offset');
 
-    play_icon = document.querySelectorAll('img[alt="Play"]')[0];
-    pause_icon = document.querySelectorAll('img[alt="Pause"]')[0];
-    pause_icon.style.display = 'none';
-
     document.getElementById('slower').addEventListener('click', onSlowerClick);
     document.getElementById('faster').addEventListener('click', onFasterClick);
 
     document.getElementById('rewind').addEventListener('click', onRewindClick);
-    document.getElementById('play_pause').addEventListener('click', onPlayPauseClick);
     document.getElementById('forward').addEventListener('click', onForwardClick);
+
+    document.getElementById('text').addEventListener('click', onPlayPauseClick);
 
     setInterval(tick, 150);
 }
