@@ -44,7 +44,7 @@ function textAtAudioOffset(seconds) {
 
 function tick() {
     const q = textAtAudioOffset(mp3.currentTime);
-    document.getElementById('current_paragraph').innerText = q;   // TODO: no need to do this every tick
+    document.getElementById('text').innerText = q;   // TODO: no need to do this every tick
     current_speed.innerText = mp3.playbackRate.toFixed(1);
     current_offset.innerText = mp3.currentTime.toFixed(1);
 }

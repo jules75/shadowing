@@ -8,10 +8,6 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-div {
-    flex-grow: 5;
-}
-
 html,
 body,
 #wrapper {
@@ -28,10 +24,11 @@ audio {
     display: none;
 }
 
-div#text p {
+p#text {
     font-size: 30pt;
     line-height: 1.6;
     letter-spacing: 5px;
+    flex-grow: 5;
 }
 
 p#status {
