@@ -1,8 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div {
+    flex-grow: 5;
+}
+
+html,
+body,
+#wrapper {
+    height: 100%;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
 audio {
     display: none;
 }
 
-p {
+div#text p {
     font-size: 30pt;
     line-height: 2;
     letter-spacing: 5px;
@@ -12,8 +37,15 @@ p[data-offset] {
     display: none;
 }
 
+p#status {
+    text-align: center;
+    color: #888;
+    padding: 5px;
+}
+
 section {
     display: flex;
+    flex-grow: 1;
 }
 
 button {
