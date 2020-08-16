@@ -48,6 +48,10 @@ function tick() {
     current_offset.innerText = mp3.currentTime.toFixed(1);
 }
 
+function listen(elid, fn) {
+    document.getElementById(elid).addEventListener('click', fn);
+}
+
 function init() {
 
     mp3 = document.getElementById('mp3');
@@ -58,13 +62,11 @@ function init() {
 
     overlay = document.getElementById('overlay');
 
-    document.getElementById('slower').addEventListener('click', onSlowerClick);
-    document.getElementById('faster').addEventListener('click', onFasterClick);
-
-    document.getElementById('rewind').addEventListener('click', onRewindClick);
-    document.getElementById('forward').addEventListener('click', onForwardClick);
-
-    document.getElementById('text').addEventListener('click', onPlayPauseClick);
+    listen('slower', onSlowerClick);
+    listen('faster', onFasterClick);
+    listen('rewind', onRewindClick);
+    listen('forward', onForwardClick);
+    listen('text', onPlayPauseClick);
 
     document.getElementById('meta').innerHTML = data.title + '<br>' + data.attribution;
 
