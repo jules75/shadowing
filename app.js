@@ -41,6 +41,10 @@ function textAtAudioOffset(seconds) {
     }
 }
 
+function onAudioEnded(e) {
+    overlay.src = 'icon/repeat.svg';
+}
+
 function tick() {
     const q = textAtAudioOffset(mp3.currentTime);
     document.getElementById('text').innerText = q;   // TODO: no need to do this every tick
@@ -56,6 +60,7 @@ function init() {
 
     mp3 = document.getElementById('mp3');
     mp3.src = data.src;  // loaded from JS file
+    mp3.onended = onAudioEnded;
 
     current_speed = document.getElementById('current_speed');
     current_offset = document.getElementById('current_offset');
