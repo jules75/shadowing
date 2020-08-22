@@ -46,8 +46,15 @@ function onAudioEnded(e) {
 }
 
 function tick() {
+    
     const q = textAtAudioOffset(mp3.currentTime);
-    document.getElementById('text').innerText = q;   // TODO: no need to do this every tick
+    const el = document.getElementById('text'); // TODO: no need to do this every tick
+
+    // only update on change
+    if (el.innerText != q) {
+        el.innerText = q;
+    }
+
     current_speed.innerText = mp3.playbackRate.toFixed(1);
     current_offset.innerText = mp3.currentTime.toFixed(1);
 }
