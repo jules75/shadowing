@@ -5,45 +5,17 @@
     <title></title>
     <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <script src="app.js"></script>
 </head>
 
 <body>
 
-    <img id="overlay" src="icon/play.svg" alt="Play/pause">
-
-    <div id="wrapper">
-
-        <p id="meta">Loading&hellip;</p>
-
-        <p id="text"></p>
-
-        <audio controls id="mp3">
-            <source src="" type="audio/mpeg">
-        </audio>
-
-        <p id="status">Speed <span id="current_speed">1</span>x / Offset <span id="current_offset">0</span>s</p>
-
-        <section id="controls">
-            <button id="slower"><img src="icon/minus.svg" alt="Slower"></button>
-            <button id="faster"><img src="icon/plus.svg" alt="Faster"></button>
-            <button id="rewind"><img src="icon/rewind.svg" alt="Rewind"></button>
-            <button id="forward"><img src="icon/fast-forward.svg" alt="Fast forward"></button>
-        </section>
-
-    </div>
+<ul>
+    <li><a href="play.html?id=L21_transferring_money_female">Transferring Money by Smartphone or Bank</a></li>
+    <li><a href="play.html?id=L21_walk_in_the_park">Walk in the Park?! I Have 汉字 to Study!</a></li>
+    <li><a href="play.html?id=L21_looks_or_ability">What's More Important, Looks, or Ability?</a></li>
+    <li><a href="play.html?id=L21_">Who Determine's a Baby's Looks, Mom or Dad?</a></li>
+</ul>
 
 </body>
-
-<script>
-
-    const script = document.createElement('script');
-    const url_string = window.location.href
-    const url = new URL(url_string);
-    script.onload = init;
-    script.src = 'text/' + url.searchParams.get('id') + '.js';
-    document.head.appendChild(script);
-
-</script>
 
 </html>
